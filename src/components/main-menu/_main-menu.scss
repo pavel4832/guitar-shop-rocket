@@ -1,0 +1,26 @@
+.main-menu {
+  margin-left: 94px;
+}
+
+.main-menu__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main-menu__item {
+  list-style-type: none;
+  margin-left: 40px;
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.main-menu__link {
+  font-family: $droidRegular;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.05em;
+  color: $black;
+}

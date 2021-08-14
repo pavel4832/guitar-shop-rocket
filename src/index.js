@@ -16,10 +16,10 @@ const store = configureStore({
 });
 
 ReactDOM.render(
-  <Provider store={store}>
-    <BrowserRouter history={browserHistory}>
-      <App />
-    </BrowserRouter>
-  </Provider>,
-  document.querySelector(`#root`)
+    <Provider store={store}>
+      <BrowserRouter history={browserHistory}>
+        <App />
+      </BrowserRouter>
+    </Provider>,
+    document.querySelector(`#root`)
 );
