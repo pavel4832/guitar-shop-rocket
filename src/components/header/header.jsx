@@ -15,9 +15,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div className="container">
-        <img src="./img/image-back.png" alt="картинка шапки" className="header__image" width="1079" height="282" />
-      </div>
+      <img src="./img/image-back.png" alt="картинка шапки" className="header__image" width="1079" height="282" />
     </header>
   );
 };

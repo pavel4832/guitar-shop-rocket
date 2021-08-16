@@ -1,0 +1,27 @@
+.social {
+  margin-top: 55px;
+}
+
+.social__list {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+.social__item {
+  list-style: none;
+  margin-left: 22px;
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.social__link {
+  &:hover {
+    opacity: 0.7;
+  }
+  &:active {
+    opacity: 0.5;
+  }
+}

@@ -1,0 +1,48 @@
+.footer__image {
+  width: 1079px;
+  height: 279px;
+  margin: 0 auto;
+  padding-top: 90px;
+  background-image: url("../../img/image-guitar-footer.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.footer__line {
+  height: 6px;
+  background: $background-grey;
+}
+
+.footer__content {
+  margin-top: -260px;
+  background: $background-grey;
+}
+
+.footer__wrapper {
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  padding-top: 61px;
+  padding-bottom: 63px;
+}
+
+.footer__left {
+  display: flex;
+  flex-direction: column;
+  justify-self: left;
+  align-items: flex-start;
+}
+
+.footer__logo {
+  height: auto;
+  justify-content: start;
+  align-items: flex-start;
+}
+
+.footer__center {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__right {
+  justify-self: right;
+}
