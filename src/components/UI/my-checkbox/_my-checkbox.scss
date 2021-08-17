@@ -1,0 +1,42 @@
+.my_checkbox {
+  margin: 0;
+}
+
+.filter__checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.filter__label {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 12px;
+  font-family: $droidRegular;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  &:before {
+    content: "";
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
+    text-align: center;
+    background-color: $background-white;
+    border-radius: 2px;
+    border: 0.7px solid $border-gray;
+  }
+}
+
+.my_checkbox:checked + .filter__label {
+  &:after {
+    content: url("../../img/check-mark-button.svg");
+    position: absolute;
+    top: 2px;
+    left: 6px;
+  }
+}
