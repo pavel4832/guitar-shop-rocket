@@ -2,6 +2,9 @@ import React from 'react';
 import LogoFooter from '../logo-footer/logo-footer';
 import SocialMenu from '../social-menu/social-menu';
 import FooterContact from '../footer-contact/footer-contact';
+import FooterAbout from '../footer-about/footer-about';
+import FooterCatalog from '../footer-catalog/footer-catalog';
+import FooterInfo from '../footer-info/footer-info';
 
 const Footer = () => {
   return (
@@ -17,7 +20,9 @@ const Footer = () => {
               <SocialMenu />
             </div>
             <div className="footer__center">
-
+              <FooterAbout />
+              <FooterCatalog />
+              <FooterInfo />
             </div>
             <div className="footer__right">
               <FooterContact />
