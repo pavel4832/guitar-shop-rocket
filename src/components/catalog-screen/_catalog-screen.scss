@@ -2,3 +2,15 @@
   display: grid;
   grid-template-columns: max-content 1fr;
 }
+
+.catalog__board {
+  margin-top: 40px;
+  margin-left: 32px;
+}
+
+.catalog__list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}

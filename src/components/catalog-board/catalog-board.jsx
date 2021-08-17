@@ -1,9 +1,12 @@
 import React from 'react';
+import CatalogSort from "../catalog-sort/catalog-sort";
+import CatalogList from "../catalog-list/catalog-list";
 
 const CatalogBoard = () => {
   return (
-    <div>
-
+    <div className="catalog__board">
+      <CatalogSort />
+      <CatalogList />
     </div>
   );
 };

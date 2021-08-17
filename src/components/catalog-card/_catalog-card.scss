@@ -1,0 +1,26 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 220px;
+  height: 304px;
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-top: 16px;
+  padding-bottom: 20px;
+  border: 1px solid $border-filter;
+}
+
+.card__rating {
+  display: flex;
+}
+
+.card__description {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__control {
+  display: flex;
+  justify-content: space-between;
+}

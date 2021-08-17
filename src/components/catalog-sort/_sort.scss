@@ -1,0 +1,88 @@
+.sort {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+}
+
+.sort__title {
+  margin: 0;
+  padding: 0;
+  font-family: $droidRegular;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.05em;
+}
+
+.sort__list {
+  display: flex;
+  margin: 0;
+  margin-left: 19px;
+  padding: 0;
+}
+
+.sort__item {
+  list-style: none;
+  margin-left: 34px;
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.sort__link {
+  font-family: $droidRegular;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.05em;
+  color: $border_black;
+  &:hover {
+    color: $border_black;
+  }
+  &:active {
+    color: $border-gray;
+  }
+}
+
+.sort__link.active {
+  color: $black;
+  &:hover {
+    color: $border_black;
+  }
+  &:active {
+    color: $border-gray;
+  }
+}
+
+.sort__control {
+  justify-self: flex-end;
+  display: flex;
+}
+
+.sort__btn {
+  border: none;
+  background-color: $white;
+  color: $button-gray;
+  cursor: pointer;
+  &:hover {
+    color: $border_black;
+  }
+  &:active {
+    color: $border-gray;
+  }
+}
+
+.sort__btn.active {
+  color: $black;
+  &:hover {
+    color: $border_black;
+  }
+  &:active {
+    color: $border-gray;
+  }
+}
+
+.sort__btn--decrease {
+  margin-left: 14px;
+}

@@ -3,6 +3,7 @@ import {createReducer} from '@reduxjs/toolkit';
 import {GUITAR_LIST} from '../../mock/mock';
 
 const initialState = {
+  guitarList: GUITAR_LIST,
   menuType: ``,
   inBasket: 0,
   fullGuitarList: GUITAR_LIST,
