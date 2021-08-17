@@ -1,7 +1,8 @@
 import React from 'react';
 import {useDispatch} from 'react-redux';
-import {MAIN_MENU} from '../../const';
+import {AppRoute, MAIN_MENU} from '../../const';
 import {setBasket} from '../../store/actions';
+import {Link} from 'react-router-dom';
 
 const MainMenu = () => {
   const dispatch = useDispatch();
@@ -9,11 +10,11 @@ const MainMenu = () => {
   return (
     <nav className="header__menu main-menu">
       <ul className="main-menu__list">
-        {MAIN_MENU.map((item) => (
-          <li key={item} className="main-menu__item">
-            <a className="main-menu__link link" onClick={dispatch(setBasket(false))}>
+        {MAIN_MENU.map((item, index) => (
+          <li key={index} className="main-menu__item">
+            <Link to={AppRoute[item.link]} className="main-menu__link link" onClick={() => dispatch(setBasket(false))}>
               {item.name}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
