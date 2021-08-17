@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  flex-direction: column;
+}
+
+.header__nav {
+  background: $background-header;
+}
+
+.header__wrapper {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.header__image {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -35px;
+}

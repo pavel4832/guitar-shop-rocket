@@ -1,0 +1,15 @@
+.basket-icon {
+  position: relative;
+}
+
+.basket-icon__text {
+  position: absolute;
+  top: 8px;
+  right: 4px;
+  font-family: $droidRegular;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  color: $red;
+}

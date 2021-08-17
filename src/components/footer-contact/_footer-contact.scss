@@ -1,0 +1,50 @@
+.contact__title {
+  margin: 0;
+  padding: 0;
+  font-family: $droidRegular;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 44px;
+  letter-spacing: 0.1em;
+  color: $white;
+  opacity: 0.7;
+}
+
+.contact__text {
+  margin: 0;
+  padding: 0;
+  font-family: $droidRegular;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 0.1em;
+  color: $white;
+}
+
+.contact__link {
+  font-family: $droidRegular;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 0.1em;
+  color: $white;
+}
+
+.contact__link--phone {
+  display: inline-block;
+  margin-bottom: 13px;
+  &:before {
+    content: url("../img/icon_phone.svg");
+    margin-right: 5px;
+  }
+}
+
+.contact__text--time {
+  &:before {
+    content: url("../img/icon_clock.svg");
+    margin-right: 5px;
+  }
+}
