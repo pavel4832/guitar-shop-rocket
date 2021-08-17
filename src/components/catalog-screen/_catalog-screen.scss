@@ -4,6 +4,8 @@
 }
 
 .catalog__board {
+  display: grid;
+  grid-template-rows: max-content 1fr max-content;
   margin-top: 40px;
   margin-left: 32px;
 }

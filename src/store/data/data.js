@@ -4,6 +4,7 @@ import {GUITAR_LIST} from '../../mock/mock';
 
 const initialState = {
   guitarList: GUITAR_LIST,
+  filteredAndSortedList: GUITAR_LIST,
   menuType: ``,
   inBasket: 0,
   fullGuitarList: GUITAR_LIST,

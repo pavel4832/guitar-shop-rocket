@@ -11,7 +11,7 @@ const MyButton = ({inputClass, children, ...props}) => {
 
 MyButton.propTypes = {
   inputClass: PropTypes.string.isRequired,
-  children: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default MyButton;

@@ -37,3 +37,5 @@ export const MAIN_MENU = [
 ];
 
 export const RATING_STARS = [1, 2, 3, 4, 5];
+
+export const PAGE_LIMIT = 9;
