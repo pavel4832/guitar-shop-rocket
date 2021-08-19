@@ -132,6 +132,7 @@ export const GUITAR_LIST = [
   {
     id: 14,
     image: `./img/acoustic-guitar.png`,
+    imageSmall: `./img/acoustic-guitar-small.png`,
     artNumber: `VO519510`,
     name: `Виолана Mix`,
     type: `acoustic`,
@@ -268,5 +269,28 @@ export const GUITAR_LIST = [
     rating: 29,
     strings: 4,
     price: 6700,
+  },
+];
+
+export const BASKET_LIST = [
+  {
+    id: 1,
+    image: `./img/electric-guitar.png`,
+    artNumber: `SO757575`,
+    name: `Честер Bass`,
+    type: `electric`,
+    rating: 15,
+    strings: 7,
+    price: 17500,
+  },
+  {
+    id: 2,
+    image: `./img/curtZ300-guitar.png`,
+    artNumber: `TK129049`,
+    name: `СURT Z300`,
+    type: `electric`,
+    rating: 9,
+    strings: 7,
+    price: 29500,
   },
 ];

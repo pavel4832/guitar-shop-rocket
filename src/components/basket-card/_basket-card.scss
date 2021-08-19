@@ -1,0 +1,77 @@
+.basket__item {
+  display: grid;
+  grid-template-columns: min-content max-content max-content 1fr 1fr 1fr;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  list-style: none;
+  border-top: 0.7px solid $border-filter;
+  &:last-child {
+    border-bottom: 0.7px solid $border-filter;
+  }
+}
+
+.basket__btn {
+  justify-self: start;
+  padding: 0;
+  width: 18px;
+  height: 18px;
+  border: none;
+  background-color: $white;
+  color: $border-gray;
+}
+
+.basket__image {
+  margin-left: 25px;
+}
+
+.basket__description {
+  margin-left: 68px;
+  width: 252px;
+}
+
+.basket__title {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 14px;
+  font-family: $droidBold;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 15px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.basket__text {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 6px;
+  font-family: $droidRegular;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 15px;
+  letter-spacing: 0.05em;
+}
+
+.basket__price {
+  justify-self: center;
+  align-self: center;
+  font-family: $droidRegular;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 15px;
+  letter-spacing: 0.05em;
+}
+
+.basket__amount {
+  justify-self: end;
+  align-self: center;
+  font-family: $droidBold;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 15px;
+  letter-spacing: 0.05em;
+}

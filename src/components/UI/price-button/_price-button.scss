@@ -1,0 +1,36 @@
+.price-control {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  align-self: start;
+  margin-top: 20px;
+}
+
+.price-control__btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 30px;
+  color: $border-gray;
+  border-radius: 0;
+  background-color: $white;
+}
+
+.price-control__input {
+  padding: 0;
+  width: 28px;
+  height: 30px;
+  font-family: $droidRegular;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 15px;
+  letter-spacing: 0.05em;
+  color: $border-gray;
+  text-align: center;
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+  background-color: $white;
+}
