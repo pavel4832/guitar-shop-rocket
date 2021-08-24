@@ -6,7 +6,6 @@ export const ActionType = {
   SET_BASKET: `data/setBasket`,
   CHANGE_QTY: `data/changeQty`,
   REMOVE_BASKET_ITEM: `data/removeBasketItem`,
-  SET_DISCOUNT_COMPLETE: `data/setDiscountComplete`,
 };
 
 export const changeMenu = createAction(ActionType.CHANGE_MENU, (newMenu) => {
@@ -36,11 +35,5 @@ export const changeQty = createAction(ActionType.CHANGE_QTY, (newQty) => {
 export const removeBasketItem = createAction(ActionType.REMOVE_BASKET_ITEM, (item) => {
   return {
     payload: item,
-  };
-});
-
-export const setDiscountComplete = createAction(ActionType.SET_DISCOUNT_COMPLETE, (flag) => {
-  return {
-    payload: flag,
   };
 });

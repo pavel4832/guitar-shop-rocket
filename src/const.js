@@ -5,6 +5,7 @@ export const AppRoute = {
   ABOUT: `/about`,
   SERVICES: `/services`,
   ORDER: `/order`,
+  PRODUCT_ITEM: `/product-item`
 };
 
 export const MenuType = {
@@ -58,4 +59,10 @@ export const PromoDiscount = {
   SUPERGITARA: 700,
   GITARA2020: 0.3,
   MAX_DISCOUNT: 3500,
+};
+
+export const RADIX = 10;
+
+export const KeyName = {
+  ESC: `Escape`
 };

@@ -1,0 +1,88 @@
+.add-complete {
+  position: relative;
+  padding-top: 30px;
+  padding-left: 50px;
+  padding-bottom: 54px;
+  padding-right: 20px;
+  width: 740px;
+  background: $white;
+  box-shadow: 0 5px 6px rgba(63, 63, 63, 0.2);
+  border-radius: 4px;
+  opacity: 1;
+}
+
+.add-complete__btn.close__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 20px;
+  width: 18px;
+  margin: 0;
+  padding: 0;
+  color: $border-gray;
+  border: none;
+  background: $white;
+  &:hover {
+    background-color: $white;
+  }
+  &:active {
+    background-color: $white;
+  }
+}
+
+.add-complete__title {
+  margin: 0;
+  padding: 0;
+  font-family: $droidBold;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+  color: $popup-title;
+}
+
+.add-complete__wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding-left: 82px;
+  padding-right: 111px;
+}
+
+.add-complete__btn {
+  width: 220px;
+  height: 46px;
+  font-family: $droidBold;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 46px;
+  letter-spacing: 0.05em;
+  border: none;
+}
+
+.add-complete__btn--basket {
+  color: $white;
+  background-color: $background-orange;
+  &:hover {
+    background-color: $border-orange;
+  }
+  &:active {
+    background-color: $border-orange-black;
+  }
+}
+
+.add-complete__btn--continue {
+  color: $checkbox-hover;
+  background-color: $white;
+  border: 1px solid $checkbox-hover;
+  &:hover {
+    opacity: 0.7;
+  }
+  &:active {
+    opacity: 0.5;
+  }
+}

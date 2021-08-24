@@ -1,0 +1,98 @@
+.popup__add-to-cart {
+  position: relative;
+  padding-top: 30px;
+  padding-left: 50px;
+  padding-bottom: 32px;
+  padding-right: 20px;
+  width: 740px;
+  background: $white;
+  box-shadow: 0 5px 6px rgba(63, 63, 63, 0.2);
+  border-radius: 4px;
+  opacity: 1;
+}
+
+.add-to-cart__btn.close__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 20px;
+  width: 18px;
+  margin: 0;
+  padding: 0;
+  color: $border-gray;
+  border: none;
+  background: $white;
+  &:hover {
+    background-color: $white;
+  }
+  &:active {
+    background-color: $white;
+  }
+}
+
+.add-to-cart__title {
+  margin: 0;
+  padding: 0;
+  font-family: $droidBold;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+  color: $popup-title;
+}
+
+.add-to-cart__wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.add-to-cart__description {
+  margin-left: 40px;
+}
+
+.add-to-cart__item {
+  display: flex;
+}
+
+.add-to-cart__name {
+  margin-top: 14px;
+}
+
+.add-to-cart__text {
+  margin-top: 14px;
+}
+
+.add-to-cart__price {
+  font-family: $droidBold;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 15px;
+  letter-spacing: 0.05em;
+  color: $black;
+}
+
+.add-to-cart__btn {
+  margin-top: 14px;
+  width: 220px;
+  height: 46px;
+  font-family: $droidBold;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 46px;
+  letter-spacing: 0.05em;
+  color: $white;
+  background-color: $background-orange;
+  border: none;
+  &:hover {
+    background-color: $border-orange;
+  }
+  &:active {
+    background-color: $border-orange-black;
+  }
+}

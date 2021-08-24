@@ -1,18 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import MyButton from '../UI/my-button/my-button';
 import {GuitarType} from '../../const';
 import PriceButton from '../UI/price-button/price-button';
-import {useDispatch} from 'react-redux';
-import {removeBasketItem} from '../../store/actions';
+import Popup from '../UI/popup/popup';
+import RemoveFromBasket from '../remove-from-basket/remove-from-basket';
 
 const BasketCard = (props) => {
   const {card} = props;
+  const [isRemove, setRemove] = useState(false);
 
-  const dispatch = useDispatch();
-
-  const removeItemHandler = (element) => {
-    dispatch(removeBasketItem(element));
+  const removeItemHandler = () => {
+    setRemove(true);
   };
 
   const getTotalPrice = () => {
@@ -43,6 +42,9 @@ const BasketCard = (props) => {
         card={card}
       />
       <p className="basket__amount">{`${getTotalPrice().toLocaleString(`ru-RU`)} ₽`}</p>
+      {(isRemove) && <Popup name={`basket__popup`} active={isRemove} setActive={setRemove}>
+        <RemoveFromBasket setActive={setRemove} card={card} />
+      </Popup>}
     </li>
   );
 };

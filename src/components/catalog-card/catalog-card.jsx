@@ -1,10 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-import {RATING_STARS} from '../../const';
+import {AppRoute, RATING_STARS} from '../../const';
 import MyButton from '../UI/my-button/my-button';
+import {useDispatch} from 'react-redux';
+import {redirectToRoute} from '../../store/actions';
+import Popup from '../UI/popup/popup';
+import AddToCart from '../add-to-cart/add-to-cart';
+import {popupOpenHandler} from '../../utils';
+import AddComplete from '../add-complete/add-complete';
 
 const CatalogCard = (props) => {
   const {card} = props;
+  const [isAddToCart, setAddToCart] = useState(false);
+  const [isComplete, setComplete] = useState(false);
+
+  const dispatch = useDispatch();
+
   return (
     <div className="catalog__card card">
       <img src={card.image} className="card__image" alt="фото гитары" width="68" height="190"/>
@@ -25,9 +36,21 @@ const CatalogCard = (props) => {
         <span className="card__text">{`${card.price.toLocaleString(`ru-RU`)} ₽`}</span>
       </div>
       <div className="card__control">
-        <MyButton inputClass={`card__btn card__btn--more`}>Подробнее</MyButton>
-        <MyButton inputClass={`card__btn card__btn--buy`}>Купить</MyButton>
+        <MyButton
+          inputClass={`card__btn card__btn--more`}
+          onClick={() => dispatch(redirectToRoute(AppRoute.PRODUCT_ITEM))}
+        >Подробнее</MyButton>
+        <MyButton
+          inputClass={`card__btn card__btn--buy`}
+          onClick={() => popupOpenHandler(setAddToCart)}
+        >Купить</MyButton>
       </div>
+      {(isAddToCart) && <Popup name={`catalog__popup`} active={isAddToCart} setActive={setAddToCart}>
+        <AddToCart setActive={setAddToCart} card={card} setComplete={setComplete} />
+      </Popup>}
+      {(isComplete) && <Popup name={`catalog__popup`} active={isComplete} setActive={setComplete}>
+        <AddComplete setActive={setComplete} />
+      </Popup>}
     </div>
   );
 };

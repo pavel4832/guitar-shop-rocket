@@ -3,7 +3,7 @@ import MyInput from '../UI/my-input/my-input';
 import MyButton from '../UI/my-button/my-button';
 import {useDispatch, useSelector} from 'react-redux';
 import {PromoDiscount, PromoType, AppRoute} from '../../const';
-import {redirectToRoute, setDiscountComplete} from '../../store/actions';
+import {redirectToRoute} from '../../store/actions';
 
 const BasketFooter = () => {
   const {basketList, isDiscountGot} = useSelector((state) => state.DATA);
@@ -17,11 +17,9 @@ const BasketFooter = () => {
       switch (isPromo) {
         case PromoType.GITARAHIT:
           setDiscount(getTotalPrice() * PromoDiscount.GITARAHIT);
-          dispatch(setDiscountComplete(true));
           break;
         case PromoType.SUPERGITARA:
           setDiscount(PromoDiscount.SUPERGITARA);
-          dispatch(setDiscountComplete(true));
           break;
         case PromoType.GITARA2020:
           let newDiscount = getTotalPrice() * PromoDiscount.GITARA2020;
@@ -29,7 +27,6 @@ const BasketFooter = () => {
             newDiscount = PromoDiscount.MAX_DISCOUNT;
           }
           setDiscount(newDiscount);
-          dispatch(setDiscountComplete(true));
           break;
         default:
           setDiscount(0);

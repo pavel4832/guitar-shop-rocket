@@ -3,10 +3,13 @@ import PropTypes from 'prop-types';
 import MyButton from '../my-button/my-button';
 import MyInput from '../my-input/my-input';
 import {useDispatch} from 'react-redux';
-import {changeQty, removeBasketItem} from '../../../store/actions';
+import {changeQty} from '../../../store/actions';
+import Popup from "../popup/popup";
+import RemoveFromBasket from "../../remove-from-basket/remove-from-basket";
 
 const PriceButton = ({inputClass, card, ...props}) => {
   const [isQty, setQty] = useState(card.quantity);
+  const [isRemove, setRemove] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -16,7 +19,7 @@ const PriceButton = ({inputClass, card, ...props}) => {
       setQty(newQty);
       dispatch(changeQty({card, newQty}));
     } else {
-      dispatch(removeBasketItem(card));
+      setRemove(true);
     }
   };
 
@@ -55,6 +58,9 @@ const PriceButton = ({inputClass, card, ...props}) => {
           <line x1="3.8457" y1="8" x2="3.8457" stroke="currentColor"/>
         </svg>
       </MyButton>
+      {(isRemove) && <Popup name={`basket__popup`} active={isRemove} setActive={setRemove}>
+        <RemoveFromBasket setActive={setRemove} card={card} />
+      </Popup>}
     </div>
   );
 };
