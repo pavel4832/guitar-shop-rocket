@@ -10,9 +10,9 @@ const Filter = () => {
         <li className="filter__item">
           <h3 className="filter__field">Цена, ₽</h3>
           <div className="filter__price price">
-            <MyInput className="price__input" />
+            <MyInput inputClass={`price__input`} />
             <div className="price__line"></div>
-            <MyInput className="price__input" />
+            <MyInput inputClass={`price__input`} />
           </div>
         </li>
         <li className="filter__item">
