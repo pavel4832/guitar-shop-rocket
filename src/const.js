@@ -4,6 +4,7 @@ export const AppRoute = {
   SHOPS: `/shops`,
   ABOUT: `/about`,
   SERVICES: `/services`,
+  ORDER: `/order`,
 };
 
 export const MenuType = {
@@ -44,4 +45,17 @@ export const GuitarType = {
   electric: `Электрогитара`,
   acoustic: `Акустическая гитара`,
   uku: `Укулеле`
+};
+
+export const PromoType = {
+  GITARAHIT: `GITARAHIT`,
+  SUPERGITARA: `SUPERGITARA`,
+  GITARA2020: `GITARA2020`,
+};
+
+export const PromoDiscount = {
+  GITARAHIT: 0.1,
+  SUPERGITARA: 700,
+  GITARA2020: 0.3,
+  MAX_DISCOUNT: 3500,
 };

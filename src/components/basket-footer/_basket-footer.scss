@@ -42,9 +42,6 @@
   letter-spacing: 0.05em;
   color: $black;
   text-align: center;
-  &::placeholder {
-    color: $black;
-  }
 }
 
 .basket-promo__btn {

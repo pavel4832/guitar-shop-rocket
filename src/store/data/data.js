@@ -1,6 +1,7 @@
 import * as actions from '../actions';
 import {createReducer} from '@reduxjs/toolkit';
 import {GUITAR_LIST, BASKET_LIST} from '../../mock/mock';
+import {setDiscount, setDiscountComplete} from "../actions";
 
 const initialState = {
   guitarList: GUITAR_LIST,
@@ -10,6 +11,24 @@ const initialState = {
   inBasket: 0,
   fullGuitarList: GUITAR_LIST,
   onBasket: false,
+  isDiscountGot: false,
+};
+
+const removeElement = (target, element) => {
+  return target.filter((item) => item.id !== element.id);
+};
+
+const getNewBasketList = (target, card, qty) => {
+  let newArr = target.slice();
+  const foundIndex = newArr.findIndex((item) => item.id === card.id);
+  newArr[foundIndex] = Object.assign(
+      {},
+      newArr[foundIndex],
+      {
+        quantity: qty,
+      }
+  );
+  return newArr;
 };
 
 const DATA = createReducer(initialState, (builder) => {
@@ -23,6 +42,24 @@ const DATA = createReducer(initialState, (builder) => {
     return {
       ...state,
       onBasket: action.payload,
+    };
+  });
+  builder.addCase(actions.changeQty, (state, action) => {
+    return {
+      ...state,
+      basketList: getNewBasketList(state.basketList, action.payload.card, action.payload.newQty),
+    };
+  });
+  builder.addCase(actions.removeBasketItem, (state, action) => {
+    return {
+      ...state,
+      basketList: removeElement(state.basketList, action.payload),
+    };
+  });
+  builder.addCase(actions.setDiscountComplete, (state, action) => {
+    return {
+      ...state,
+      isDiscountGot: action.payload,
     };
   });
 });

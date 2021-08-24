@@ -4,6 +4,9 @@ export const ActionType = {
   CHANGE_MENU: `data/changeMenu`,
   REDIRECT_TO_ROUTE: `data/redirectToRoute`,
   SET_BASKET: `data/setBasket`,
+  CHANGE_QTY: `data/changeQty`,
+  REMOVE_BASKET_ITEM: `data/removeBasketItem`,
+  SET_DISCOUNT_COMPLETE: `data/setDiscountComplete`,
 };
 
 export const changeMenu = createAction(ActionType.CHANGE_MENU, (newMenu) => {
@@ -21,5 +24,23 @@ export const redirectToRoute = createAction(ActionType.REDIRECT_TO_ROUTE, (url) 
 export const setBasket = createAction(ActionType.SET_BASKET, (status) => {
   return {
     payload: status,
+  };
+});
+
+export const changeQty = createAction(ActionType.CHANGE_QTY, (newQty) => {
+  return {
+    payload: newQty,
+  };
+});
+
+export const removeBasketItem = createAction(ActionType.REMOVE_BASKET_ITEM, (item) => {
+  return {
+    payload: item,
+  };
+});
+
+export const setDiscountComplete = createAction(ActionType.SET_DISCOUNT_COMPLETE, (flag) => {
+  return {
+    payload: flag,
   };
 });

@@ -275,6 +275,7 @@ export const GUITAR_LIST = [
 export const BASKET_LIST = [
   {
     id: 1,
+    quantity: 1,
     image: `./img/electric-guitar.png`,
     artNumber: `SO757575`,
     name: `Честер Bass`,
@@ -285,6 +286,7 @@ export const BASKET_LIST = [
   },
   {
     id: 2,
+    quantity: 1,
     image: `./img/curtZ300-guitar.png`,
     artNumber: `TK129049`,
     name: `СURT Z300`,
