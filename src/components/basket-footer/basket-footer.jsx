@@ -60,13 +60,13 @@ const BasketFooter = () => {
           >Применить купон</MyButton>
         </div>
       </div>
-      <div className="basket__total">
-        <div className="basket-promo__amount">
-          <span className="basket-promo__comment">Всего: </span>
-          <span className="basket-promo__comment">{`${getTotalPrice().toLocaleString(`ru-RU`)} ₽`}</span>
+      <div className="basket__total basket-total">
+        <div className="basket-total__amount">
+          <span className="basket-total__comment">Всего: </span>
+          <span className="basket-total__comment">{`${getTotalPrice().toLocaleString(`ru-RU`)} ₽`}</span>
         </div>
         <MyButton
-          inputClass={`basket-promo__submit`}
+          inputClass={`basket-total__submit`}
           onClick={() => dispatch(redirectToRoute(AppRoute.ORDER))}
         >Оформить заказ</MyButton>
       </div>

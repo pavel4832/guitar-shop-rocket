@@ -21,7 +21,7 @@ const BasketCard = (props) => {
   return (
     <li className="basket__item">
       <MyButton
-        inputClass={`basket__btn close__btn`}
+        inputClass={`basket__btn close-btn`}
         aria-label="Закрыть"
         onClick={() => removeItemHandler(card)}
       >
@@ -37,7 +37,6 @@ const BasketCard = (props) => {
       </div>
       <p className="basket__price">{`${card.price.toLocaleString(`ru-RU`)} ₽`}</p>
       <PriceButton
-        id={card.id}
         inputClass={`basket__price-control`}
         card={card}
       />

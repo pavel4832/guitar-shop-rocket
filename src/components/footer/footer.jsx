@@ -8,7 +8,7 @@ import FooterInfo from '../footer-info/footer-info';
 
 const Footer = () => {
   return (
-    <footer className="page__footer footer">
+    <footer className="page-footer footer">
       <div className="footer__image">
         <div className="footer__line"></div>
       </div>

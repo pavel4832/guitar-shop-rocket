@@ -10,10 +10,10 @@ const CatalogScreen = () => {
   const filteredAndSortedList = getSortedArray(guitarList, sortType, sortDirection, filters);
 
   return (
-    <main className="page__main">
-      <section className="page__catalog catalog">
+    <main className="page-main main">
+      <section className="main__catalog catalog">
         <div className="container">
-          <h1 className="page__title catalog__title">Каталог гитар</h1>
+          <h1 className="main__title catalog__title">Каталог гитар</h1>
           <BreadCrumbs name={`catalog`} />
           <div className="catalog__wrapper">
             <Filter filteredAndSortedList={filteredAndSortedList} />

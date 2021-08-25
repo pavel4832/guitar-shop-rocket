@@ -1,4 +1,4 @@
-.my_checkbox {
+.my-checkbox {
   margin: 0;
 }
 
@@ -43,7 +43,7 @@
   }
 }
 
-.my_checkbox:checked + .filter__label {
+.my-checkbox:checked + .filter__label {
   &:after {
     content: url("../../img/check-mark-button.svg");
     position: absolute;
@@ -52,7 +52,7 @@
   }
 }
 
-.my_checkbox:disabled + .filter__label {
+.my-checkbox:disabled + .filter__label {
   color: $checkbox-disabled;
   cursor: auto;
   &:before{
