@@ -1,15 +1,41 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {popupCloseHandler, popupOpenHandler} from '../../utils';
-import MyButton from "../UI/my-button/my-button";
-import {GuitarType} from "../../const";
+import MyButton from '../UI/my-button/my-button';
+import {GuitarType} from '../../const';
+import {useDispatch, useSelector} from 'react-redux';
+import {addBasketItem, changeQty} from "../../store/actions";
 
 const AddToCart = (props) => {
   const {setActive, card, setComplete} = props;
+  const {basketList} = useSelector((state) => state.DATA);
+
+  const dispatch = useDispatch();
+
+  const addNewItemHandler = () => {
+    let isSame = false;
+    let newItem = Object.assign(
+        {},
+        card,
+        {
+          quantity: 1,
+        }
+    );
+    basketList.forEach((item) => {
+      if (item.id === newItem.id) {
+        dispatch(changeQty({card: item, newQty: item.quantity + 1}));
+        isSame = true;
+      }
+    });
+    if (!isSame) {
+      dispatch(addBasketItem(newItem));
+    }
+  };
 
   const addCompleteHandler = () => {
     setActive(false);
     popupOpenHandler(setComplete);
+    addNewItemHandler();
   };
 
   return (

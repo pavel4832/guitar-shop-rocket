@@ -1,13 +1,25 @@
 import * as actions from '../actions';
 import {createReducer} from '@reduxjs/toolkit';
-import {GUITAR_LIST, BASKET_LIST} from '../../mock/mock';
+import {GUITAR_LIST} from '../../mock/mock';
+import {SortDirection, SortType} from '../../const';
 
 const initialState = {
   guitarList: GUITAR_LIST,
-  filteredAndSortedList: GUITAR_LIST,
-  basketList: BASKET_LIST,
+  sortType: SortType.NONE,
+  sortDirection: SortDirection.NONE,
+  filters: {
+    minPrice: ``,
+    maxPrice: ``,
+    acoustic: false,
+    electric: false,
+    uku: false,
+    fourStrings: false,
+    sixStrings: false,
+    sevenStrings: false,
+    twelveStrings: false,
+  },
+  basketList: [],
   menuType: ``,
-  fullGuitarList: GUITAR_LIST,
   onBasket: false,
 };
 
@@ -35,10 +47,34 @@ const DATA = createReducer(initialState, (builder) => {
       menuType: action.payload,
     };
   });
+  builder.addCase(actions.changeSortType, (state, action) => {
+    return {
+      ...state,
+      sortType: action.payload,
+    };
+  });
+  builder.addCase(actions.changeSortDirection, (state, action) => {
+    return {
+      ...state,
+      sortDirection: action.payload,
+    };
+  });
+  builder.addCase(actions.setFilters, (state, action) => {
+    return {
+      ...state,
+      filters: action.payload,
+    };
+  });
   builder.addCase(actions.setBasket, (state, action) => {
     return {
       ...state,
       onBasket: action.payload,
+    };
+  });
+  builder.addCase(actions.addBasketItem, (state, action) => {
+    return {
+      ...state,
+      basketList: [...state.basketList, action.payload],
     };
   });
   builder.addCase(actions.changeQty, (state, action) => {

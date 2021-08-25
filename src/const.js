@@ -66,3 +66,22 @@ export const RADIX = 10;
 export const KeyName = {
   ESC: `Escape`
 };
+
+export const SortType = {
+  NONE: ``,
+  BY_PRICE: `byPrice`,
+  BY_RATING: `byRating`,
+};
+
+export const SortDirection = {
+  NONE: ``,
+  UP: `up`,
+  DOWN: `down`,
+};
+
+export const StringQuantity = {
+  FOUR: 4,
+  SIX: 6,
+  SEVEN: 7,
+  TWELVE: 12,
+};

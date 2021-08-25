@@ -27,7 +27,7 @@ const AddComplete = (props) => {
         <MyButton
           inputClass={`add-complete__btn add-complete__btn--basket`}
           onClick={() => dispatch(redirectToRoute(AppRoute.BASKET))}
-        >Добавить в корзину</MyButton>
+        >Перейти в корзину</MyButton>
         <MyButton
           inputClass={`add-complete__btn add-complete__btn--continue`}
           onClick={() => popupCloseHandler(setActive)}

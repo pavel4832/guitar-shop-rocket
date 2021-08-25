@@ -6,14 +6,14 @@ import {PromoDiscount, PromoType, AppRoute} from '../../const';
 import {redirectToRoute} from '../../store/actions';
 
 const BasketFooter = () => {
-  const {basketList, isDiscountGot} = useSelector((state) => state.DATA);
+  const {basketList} = useSelector((state) => state.DATA);
   const [isPromo, setPromo] = useState(``);
   const [isDiscount, setDiscount] = useState(0);
 
   const dispatch = useDispatch();
 
   const getDiscount = () => {
-    if (isPromo && !isDiscountGot) {
+    if (isPromo) {
       switch (isPromo) {
         case PromoType.GITARAHIT:
           setDiscount(getTotalPrice() * PromoDiscount.GITARAHIT);

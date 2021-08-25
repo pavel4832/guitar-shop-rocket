@@ -1,15 +1,21 @@
 import React from 'react';
-import {useSelector} from 'react-redux';
 import {getPageCount, getPagesArray} from '../../utils';
 import {PAGE_LIMIT} from '../../const';
 import MyButton from '../UI/my-button/my-button';
 import PropTypes from 'prop-types';
 
 const CatalogPagination = (props) => {
-  const {activePage, setPage} = props;
-  const {filteredAndSortedList} = useSelector((state) => state.DATA);
+  const {filteredAndSortedList, activePage, setPage} = props;
   const totalCount = getPageCount(filteredAndSortedList.length, PAGE_LIMIT);
   const pageArray = getPagesArray(totalCount);
+
+  const backClickHandler = () => {
+    setPage(activePage - 1);
+  };
+
+  const forwardClickHandler = () => {
+    setPage(activePage + 1);
+  };
 
   const clickHandler = (page) => {
     setPage(page);
@@ -17,6 +23,12 @@ const CatalogPagination = (props) => {
 
   return (
     <div className="catalog__pagination pagination">
+      {(activePage > 1) &&
+      <MyButton
+        inputClass={`pagination__control back-btn`}
+        onClick={backClickHandler}
+      >Назад</MyButton>
+      }
       <ul className="pagination__list">
         {pageArray.map((page) => (
           <li key={page} className="pagination__item">
@@ -29,11 +41,18 @@ const CatalogPagination = (props) => {
           </li>
         ))}
       </ul>
+      {(activePage < totalCount) &&
+      <MyButton
+        inputClass={`pagination__control forward-btn`}
+        onClick={forwardClickHandler}
+      >Далее</MyButton>
+      }
     </div>
   );
 };
 
 CatalogPagination.propTypes = {
+  filteredAndSortedList: PropTypes.arrayOf(PropTypes.object).isRequired,
   activePage: PropTypes.number.isRequired,
   setPage: PropTypes.func.isRequired,
 };

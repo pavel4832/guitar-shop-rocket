@@ -54,6 +54,7 @@
 
 .my_checkbox:disabled + .filter__label {
   color: $checkbox-disabled;
+  cursor: auto;
   &:before{
     border: 0.7px solid $checkbox-disabled;
     background-color: $checkbox-disabled-background;

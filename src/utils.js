@@ -1,4 +1,4 @@
-import {RADIX} from './const';
+import {RADIX, SortDirection, SortType, StringQuantity} from './const';
 
 export const getPageCount = (totalCount, limit) => {
   return Math.ceil(totalCount / limit);
@@ -26,4 +26,111 @@ export const popupCloseHandler = (setAction) => {
   document.body.style.position = ``;
   window.scrollTo(0, parseInt(scrollY || `0`, RADIX) * -1);
   setAction(false);
+};
+
+export const getFilteredArray = (target, filters) => {
+  const arrayForFilter = target.slice();
+  let priceFilteredArray = [];
+  let acousticArray = [];
+  let electricArray = [];
+  let ukuArray = [];
+  let fourArray = [];
+  let sixArray = [];
+  let sevenArray = [];
+  let twelveArray = [];
+
+  priceFilteredArray = arrayForFilter.filter((item) => (item.price > filters.minPrice && item.price < filters.maxPrice));
+
+  let typeFilteredArray = priceFilteredArray.slice();
+
+  if (filters.acoustic) {
+    acousticArray = priceFilteredArray.filter((item) => item.type === `acoustic`);
+  }
+  if (filters.electric) {
+    electricArray = priceFilteredArray.filter((item) => item.type === `electric`);
+  }
+  if (filters.uku) {
+    ukuArray = priceFilteredArray.filter((item) => item.type === `uku`);
+  }
+
+  if (acousticArray.length !== 0 || electricArray.length !== 0 || ukuArray.length !== 0) {
+    typeFilteredArray = [...acousticArray, ...electricArray, ...ukuArray];
+  }
+
+  let stringFilteredArray = typeFilteredArray.slice();
+
+  if (filters.fourStrings) {
+    fourArray = typeFilteredArray.filter((item) => item.strings === StringQuantity.FOUR);
+  }
+
+  if (filters.sixStrings) {
+    sixArray = typeFilteredArray.filter((item) => item.strings === StringQuantity.SIX);
+  }
+
+  if (filters.sevenStrings) {
+    sevenArray = typeFilteredArray.filter((item) => item.strings === StringQuantity.SEVEN);
+  }
+
+  if (filters.twelveStrings) {
+    twelveArray = typeFilteredArray.filter((item) => item.strings === StringQuantity.TWELVE);
+  }
+
+  if (fourArray.length !== 0 || sixArray.length !== 0 || sevenArray.length !== 0 || twelveArray.length !== 0) {
+    stringFilteredArray = [...fourArray, ...sixArray, ...sevenArray, ...twelveArray];
+  }
+
+  return stringFilteredArray;
+};
+
+export const getSortedArray = (target, sortType, sortDirection, filters) => {
+  const arrayForSort = target.slice();
+  let newSortArray = [];
+
+  if (sortType === SortType.NONE && sortDirection === SortDirection.NONE) {
+    return getFilteredArray(arrayForSort, filters);
+  }
+  switch (sortType) {
+    case SortType.BY_PRICE:
+      switch (sortDirection) {
+        case SortDirection.UP:
+          newSortArray = arrayForSort.sort((a, b) => a.price - b.price);
+          break;
+        case SortDirection.DOWN:
+          newSortArray = arrayForSort.sort((a, b) => b.price - a.price);
+          break;
+      }
+      break;
+    case SortType.BY_RATING:
+      switch (sortDirection) {
+        case SortDirection.UP:
+          newSortArray = arrayForSort.sort((a, b) => a.rating - b.rating);
+          break;
+        case SortDirection.DOWN:
+          newSortArray = arrayForSort.sort((a, b) => b.rating - a.rating);
+          break;
+      }
+      break;
+  }
+
+  return getFilteredArray(newSortArray, filters);
+};
+
+export const getMinPrice = (target) => {
+  let newPrice = target[0].price;
+  target.forEach((item) => {
+    if (item.price < newPrice) {
+      newPrice = item.price;
+    }
+  });
+  return newPrice;
+};
+
+export const getMaxPrice = (target) => {
+  let newPrice = target[0].price;
+  target.forEach((item) => {
+    if (item.price > newPrice) {
+      newPrice = item.price;
+    }
+  });
+  return newPrice;
 };

@@ -4,8 +4,8 @@ import MyButton from '../my-button/my-button';
 import MyInput from '../my-input/my-input';
 import {useDispatch} from 'react-redux';
 import {changeQty} from '../../../store/actions';
-import Popup from "../popup/popup";
-import RemoveFromBasket from "../../remove-from-basket/remove-from-basket";
+import Popup from '../popup/popup';
+import RemoveFromBasket from '../../remove-from-basket/remove-from-basket';
 
 const PriceButton = ({inputClass, card, ...props}) => {
   const [isQty, setQty] = useState(card.quantity);
