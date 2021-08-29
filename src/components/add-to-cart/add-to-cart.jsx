@@ -39,7 +39,7 @@ const AddToCart = (props) => {
   };
 
   return (
-    <div className="popup__add-to-cart add-to-cart">
+    <div className="popup__add-to-cart add-to-cart" onClick={(evt) => evt.stopPropagation()}>
       <MyButton
         inputClass={`add-to-cart__btn close__btn`}
         aria-label="Закрыть"

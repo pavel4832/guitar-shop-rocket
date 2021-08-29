@@ -17,7 +17,7 @@ const RemoveFromBasket = (props) => {
   };
 
   return (
-    <div className="popup__remove-from-cart remove-from-cart">
+    <div className="popup__remove-from-cart remove-from-cart" onClick={(evt) => evt.stopPropagation()}>
       <MyButton
         inputClass={`remove-from-cart__btn close__btn`}
         aria-label="Закрыть"

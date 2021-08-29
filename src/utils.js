@@ -1,4 +1,4 @@
-import {RADIX, SortDirection, SortType, StringQuantity} from './const';
+import {FilterByType, PAGINATION_DIVIDER, RADIX, SortDirection, SortType, StringQuantity} from './const';
 
 export const getPageCount = (totalCount, limit) => {
   return Math.ceil(totalCount / limit);
@@ -8,6 +8,28 @@ export const getPagesArray = (totalPages) => {
   let result = [];
   for (let i = 0; i < totalPages; i++) {
     result.push(i + 1);
+  }
+  return result;
+};
+
+export const getRenderedArray = (target, page) => {
+  let result = [];
+  if (target.length === 0) {
+    return [];
+  }
+  if (target.length === 1) {
+    return result;
+  }
+  if (page === target[0]) {
+    result = [target[0], target[page], PAGINATION_DIVIDER, target[target.length - 1]];
+  } else if (page === target[target.length - 1]) {
+    result = [target[0], PAGINATION_DIVIDER, target[target.length - 2], target[target.length - 1]];
+  } else if (page === target[0] + 1) {
+    result = [target[0], target[page - 1], PAGINATION_DIVIDER, target[target.length - 1]];
+  } else if (page === target[target.length - 2]) {
+    result = [target[0], PAGINATION_DIVIDER, target[page - 1], target[target.length - 1]];
+  } else {
+    result = [target[0], PAGINATION_DIVIDER, target[page - 1], PAGINATION_DIVIDER, target[target.length - 1]];
   }
   return result;
 };
@@ -39,18 +61,18 @@ export const getFilteredArray = (target, filters) => {
   let sevenArray = [];
   let twelveArray = [];
 
-  priceFilteredArray = arrayForFilter.filter((item) => (item.price > filters.minPrice && item.price < filters.maxPrice));
+  priceFilteredArray = arrayForFilter.filter((item) => (item.price >= filters.minPrice && item.price <= filters.maxPrice));
 
   let typeFilteredArray = priceFilteredArray.slice();
 
   if (filters.acoustic) {
-    acousticArray = priceFilteredArray.filter((item) => item.type === `acoustic`);
+    acousticArray = priceFilteredArray.filter((item) => item.type === FilterByType.ACOUSTIC);
   }
   if (filters.electric) {
-    electricArray = priceFilteredArray.filter((item) => item.type === `electric`);
+    electricArray = priceFilteredArray.filter((item) => item.type === FilterByType.ELECTRIC);
   }
   if (filters.uku) {
-    ukuArray = priceFilteredArray.filter((item) => item.type === `uku`);
+    ukuArray = priceFilteredArray.filter((item) => item.type === FilterByType.UKU);
   }
 
   if (acousticArray.length !== 0 || electricArray.length !== 0 || ukuArray.length !== 0) {

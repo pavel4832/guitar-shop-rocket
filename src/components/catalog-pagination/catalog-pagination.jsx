@@ -1,6 +1,6 @@
 import React from 'react';
-import {getPageCount, getPagesArray} from '../../utils';
-import {PAGE_LIMIT} from '../../const';
+import {getPageCount, getPagesArray, getRenderedArray} from '../../utils';
+import {PAGE_LIMIT, PAGINATION_DIVIDER} from '../../const';
 import MyButton from '../UI/my-button/my-button';
 import PropTypes from 'prop-types';
 
@@ -8,6 +8,7 @@ const CatalogPagination = (props) => {
   const {filteredAndSortedList, activePage, setPage} = props;
   const totalCount = getPageCount(filteredAndSortedList.length, PAGE_LIMIT);
   const pageArray = getPagesArray(totalCount);
+  const renderedArray = getRenderedArray(pageArray, activePage);
 
   const backClickHandler = () => {
     setPage(activePage - 1);
@@ -30,11 +31,12 @@ const CatalogPagination = (props) => {
       >Назад</MyButton>
       }
       <ul className="pagination__list">
-        {pageArray.map((page) => (
+        {renderedArray.map((page) => (
           <li key={page} className="pagination__item">
             <MyButton
               inputClass={`pagination__button ${(page === activePage) && `active`}`}
               onClick={() => clickHandler(page)}
+              disabled={page === PAGINATION_DIVIDER}
             >
               {page}
             </MyButton>

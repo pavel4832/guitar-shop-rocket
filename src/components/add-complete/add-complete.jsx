@@ -12,7 +12,7 @@ const AddComplete = (props) => {
   const dispatch = useDispatch();
 
   return (
-    <div className="popup__add-complete add-complete">
+    <div className="popup__add-complete add-complete" onClick={(evt) => evt.stopPropagation()}>
       <MyButton
         inputClass={`add-complete__btn close__btn`}
         aria-label="Закрыть"
@@ -26,7 +26,10 @@ const AddComplete = (props) => {
       <div className="add-complete__wrapper">
         <MyButton
           inputClass={`add-complete__btn add-complete__btn--basket`}
-          onClick={() => dispatch(redirectToRoute(AppRoute.BASKET))}
+          onClick={() => {
+            dispatch(redirectToRoute(AppRoute.BASKET));
+            popupCloseHandler(setActive);
+          }}
         >Перейти в корзину</MyButton>
         <MyButton
           inputClass={`add-complete__btn add-complete__btn--continue`}

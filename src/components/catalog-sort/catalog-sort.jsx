@@ -3,8 +3,10 @@ import MyButton from '../UI/my-button/my-button';
 import {useDispatch, useSelector} from 'react-redux';
 import {changeSortType, changeSortDirection} from '../../store/actions';
 import {SortDirection, SortType} from '../../const';
+import PropTypes from "prop-types";
 
-const CatalogSort = () => {
+const CatalogSort = (props) => {
+  const {setPage} = props;
   const {sortType, sortDirection} = useSelector((state) => state.DATA);
   const dispatch = useDispatch();
 
@@ -14,6 +16,7 @@ const CatalogSort = () => {
       dispatch(changeSortDirection(SortDirection.UP));
     }
     dispatch(changeSortType(type));
+    setPage(1);
   };
 
   const onDirectionChangeHandler = (type) => {
@@ -63,6 +66,10 @@ const CatalogSort = () => {
 
     </div>
   );
+};
+
+CatalogSort.propTypes = {
+  setPage: PropTypes.func.isRequired,
 };
 
 export default CatalogSort;

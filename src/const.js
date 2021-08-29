@@ -85,3 +85,11 @@ export const StringQuantity = {
   SEVEN: 7,
   TWELVE: 12,
 };
+
+export const FilterByType = {
+  ACOUSTIC: `acoustic`,
+  ELECTRIC: `electric`,
+  UKU: `uku`,
+};
+
+export const PAGINATION_DIVIDER = `...`;

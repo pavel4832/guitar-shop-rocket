@@ -12,4 +12,13 @@
   letter-spacing: 0.05em;
   color: $black;
   cursor: pointer;
+  &:disabled {
+    cursor: auto;
+    &:hover {
+      opacity: 1;
+    }
+    &:active {
+      opacity: 1;
+    }
+  }
 }

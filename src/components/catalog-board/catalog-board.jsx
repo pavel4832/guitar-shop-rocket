@@ -10,7 +10,7 @@ const CatalogBoard = (props) => {
 
   return (
     <div className="catalog__board">
-      <CatalogSort />
+      <CatalogSort setPage={setPage} />
       <CatalogList filteredAndSortedList={filteredAndSortedList} page={page} />
       <CatalogPagination
         filteredAndSortedList={filteredAndSortedList}
