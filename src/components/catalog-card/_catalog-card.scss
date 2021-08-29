@@ -1,15 +1,18 @@
 .card {
   display: grid;
   grid-template-rows: min-content min-content min-content min-content;
-  width: 220px;
+  width: calc((100% - 40px) / 3);
   height: 304px;
   margin-bottom: 30px;
+  margin-right: 20px;
   padding-left: 14px;
   padding-right: 14px;
   padding-top: 16px;
   padding-bottom: 20px;
   border: 1px solid $border-filter;
-
+  &:nth-child(3n) {
+    margin-right: 0;
+  }
 }
 
 .card__image {

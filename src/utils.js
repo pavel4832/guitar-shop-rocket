@@ -1,4 +1,12 @@
-import {FilterByType, PAGINATION_DIVIDER, RADIX, SortDirection, SortType, StringQuantity} from './const';
+import {
+  FilterByType,
+  MAX_ACTIVE_PAGE,
+  PAGINATION_DIVIDER,
+  RADIX,
+  SortDirection,
+  SortType,
+  StringQuantity
+} from './const';
 
 export const getPageCount = (totalCount, limit) => {
   return Math.ceil(totalCount / limit);
@@ -18,15 +26,15 @@ export const getRenderedArray = (target, page) => {
     return [];
   }
   if (target.length === 1) {
-    return result;
+    return [target[0]];
   }
   if (page === target[0]) {
     result = [target[0], target[page], PAGINATION_DIVIDER, target[target.length - 1]];
   } else if (page === target[target.length - 1]) {
-    result = [target[0], PAGINATION_DIVIDER, target[target.length - 2], target[target.length - 1]];
+    result = [target[0], PAGINATION_DIVIDER, target[target.length - MAX_ACTIVE_PAGE], target[target.length - 1]];
   } else if (page === target[0] + 1) {
     result = [target[0], target[page - 1], PAGINATION_DIVIDER, target[target.length - 1]];
-  } else if (page === target[target.length - 2]) {
+  } else if (page === target[target.length - MAX_ACTIVE_PAGE]) {
     result = [target[0], PAGINATION_DIVIDER, target[page - 1], target[target.length - 1]];
   } else {
     result = [target[0], PAGINATION_DIVIDER, target[page - 1], PAGINATION_DIVIDER, target[target.length - 1]];

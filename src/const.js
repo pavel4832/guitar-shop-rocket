@@ -93,3 +93,5 @@ export const FilterByType = {
 };
 
 export const PAGINATION_DIVIDER = `...`;
+
+export const MAX_ACTIVE_PAGE = 2;
