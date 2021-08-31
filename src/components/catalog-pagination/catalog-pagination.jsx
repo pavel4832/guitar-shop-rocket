@@ -11,11 +11,11 @@ const CatalogPagination = (props) => {
   const renderedArray = getRenderedArray(pageArray, activePage);
 
   const backClickHandler = () => {
-    setPage(activePage - 1);
+    setPage(activePage <= 1 ? activePage : activePage - 1);
   };
 
   const forwardClickHandler = () => {
-    setPage(activePage + 1);
+    setPage(activePage >= totalCount ? activePage : activePage + 1);
   };
 
   const clickHandler = (page) => {
@@ -31,8 +31,8 @@ const CatalogPagination = (props) => {
       >Назад</MyButton>
       }
       <ul className="pagination__list">
-        {renderedArray.map((page) => (
-          <li key={page} className="pagination__item">
+        {renderedArray.map((page, index) => (
+          <li key={`${page}-${index}`} className="pagination__item">
             <MyButton
               inputClass={`pagination__button ${(page === activePage) && `active`}`}
               onClick={() => clickHandler(page)}
