@@ -5,13 +5,14 @@ import {GuitarType} from '../../const';
 import PriceButton from '../UI/price-button/price-button';
 import Popup from '../UI/popup/popup';
 import RemoveFromBasket from '../remove-from-basket/remove-from-basket';
+import {popupOpenHandler} from "../../utils";
 
 const BasketCard = (props) => {
   const {card} = props;
   const [isRemove, setRemove] = useState(false);
 
   const removeItemHandler = () => {
-    setRemove(true);
+    popupOpenHandler(setRemove);
   };
 
   const getTotalPrice = () => {

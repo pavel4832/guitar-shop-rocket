@@ -33,9 +33,9 @@ const AddToCart = (props) => {
   };
 
   const addCompleteHandler = () => {
-    setActive(false);
-    popupOpenHandler(setComplete);
     addNewItemHandler();
+    popupCloseHandler(setActive);
+    popupOpenHandler(setComplete);
   };
 
   return (

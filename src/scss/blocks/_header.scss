@@ -16,18 +16,21 @@
 }
 
 .header__image {
+  position: relative;
   height: 282px;
-  margin-top: -42px;
-  background-image: url("../../img/image_header.png");
-  background-repeat: no-repeat;
-  background-position-x: 100%;
+  margin-top: 14px;
 }
 
 .header__line {
   height: 4px;
   margin-top: 10px;
   background: $background-grey;
-  &:first-child {
-    margin-top: 68px;
-  }
+}
+
+.header__picture {
+  position: absolute;
+  top: -46px;
+  right: 0;
+  width: 878px;
+  height: 282px;
 }

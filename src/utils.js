@@ -1,6 +1,6 @@
 import {
   FilterByType,
-  MAX_ACTIVE_PAGE,
+  MAX_ACTIVE_PAGE, MAX_PAGINATION_BUTTON,
   PAGINATION_DIVIDER,
   RADIX,
   SortDirection,
@@ -28,16 +28,20 @@ export const getRenderedArray = (target, page) => {
   if (target.length === 1) {
     return [target[0]];
   }
-  if (page === target[0]) {
-    result = [target[0], target[page], PAGINATION_DIVIDER, target[target.length - 1]];
-  } else if (page === target[target.length - 1]) {
-    result = [target[0], PAGINATION_DIVIDER, target[target.length - MAX_ACTIVE_PAGE], target[target.length - 1]];
-  } else if (page === target[0] + 1) {
-    result = [target[0], target[page - 1], PAGINATION_DIVIDER, target[target.length - 1]];
-  } else if (page === target[target.length - MAX_ACTIVE_PAGE]) {
-    result = [target[0], PAGINATION_DIVIDER, target[page - 1], target[target.length - 1]];
+  if (target.length > MAX_PAGINATION_BUTTON) {
+    if (page === target[0]) {
+      result = [target[0], target[page], PAGINATION_DIVIDER, target[target.length - 1]];
+    } else if (page === target[target.length - 1]) {
+      result = [target[0], PAGINATION_DIVIDER, target[target.length - MAX_ACTIVE_PAGE], target[target.length - 1]];
+    } else if (page === target[0] + 1) {
+      result = [target[0], target[page - 1], PAGINATION_DIVIDER, target[target.length - 1]];
+    } else if (page === target[target.length - MAX_ACTIVE_PAGE]) {
+      result = [target[0], PAGINATION_DIVIDER, target[page - 1], target[target.length - 1]];
+    } else {
+      result = [target[0], PAGINATION_DIVIDER, target[page - 1], PAGINATION_DIVIDER, target[target.length - 1]];
+    }
   } else {
-    result = [target[0], PAGINATION_DIVIDER, target[page - 1], PAGINATION_DIVIDER, target[target.length - 1]];
+    result = [...target];
   }
   return result;
 };
@@ -54,6 +58,8 @@ export const popupOpenHandler = (setAction) => {
 export const popupCloseHandler = (setAction) => {
   const scrollY = document.body.style.top;
   document.body.style.position = ``;
+  document.body.style.top = ``;
+  document.body.style.minWidth = `320px`;
   window.scrollTo(0, parseInt(scrollY || `0`, RADIX) * -1);
   setAction(false);
 };
