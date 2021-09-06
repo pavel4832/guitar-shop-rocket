@@ -35,7 +35,7 @@ const RemoveFromBasket = (props) => {
             <h2 className="remove-from-cart__name basket__title">{`${GuitarType[card.type]} ${card.name}`}</h2>
             <p className="remove-from-cart__text basket__text">{`Артикул: ${card.artNumber}`}</p>
             <p className="basket__text">{`Электрогитара, ${card.strings} струнная`}</p>
-            <p className="remove-from-cart__price basket__price">{`${card.price.toLocaleString(`ru-RU`)} ₽`}</p>
+            <p className="remove-from-cart__price">{`Цена: ${card.price.toLocaleString(`ru-RU`)} ₽`}</p>
           </div>
         </div>
         <div className="remove-from-cart__control">

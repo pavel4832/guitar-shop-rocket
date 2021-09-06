@@ -1,5 +1,4 @@
 import React from 'react';
-import BreadCrumbs from '../bread-crumbs/bread-crumbs';
 import Filter from '../filter/filter';
 import CatalogBoard from '../catalog-board/catalog-board';
 import {getSortedArray} from '../../utils';
@@ -14,9 +13,8 @@ const CatalogScreen = () => {
       <section className="main__catalog catalog">
         <div className="container">
           <h1 className="main__title catalog__title">Каталог гитар</h1>
-          <BreadCrumbs name={`catalog`} />
           <div className="catalog__wrapper">
-            <Filter filteredAndSortedList={filteredAndSortedList} />
+            <Filter filteredAndSortedList={filteredAndSortedList}/>
             <CatalogBoard filteredAndSortedList={filteredAndSortedList} />
           </div>
         </div>

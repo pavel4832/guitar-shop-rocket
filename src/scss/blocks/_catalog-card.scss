@@ -24,13 +24,14 @@
 .card__rating {
   justify-self: flex-start;
   display: flex;
+  margin-top: 8px;
 }
 
 .card__description {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-top: 0;
+  margin-top: 3px;
 }
 
 .card__text {
@@ -46,7 +47,7 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-top: 5px;
+  margin-top: 12px;
 }
 
 .card__btn {

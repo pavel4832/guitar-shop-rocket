@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import BasketIcon from "../basket-icon/basket-icon";
+import BasketIcon from '../basket-icon/basket-icon';
 
 const SideMenu = () => {
   return (

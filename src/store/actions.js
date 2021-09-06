@@ -6,7 +6,6 @@ export const ActionType = {
   CHANGE_SORT_DIRECTION: `data/changeSortDirection`,
   SET_FILTERS: `data/setFilters`,
   REDIRECT_TO_ROUTE: `data/redirectToRoute`,
-  SET_BASKET: `data/setBasket`,
   CHANGE_QTY: `data/changeQty`,
   ADD_BASKET_ITEM: `data/addBasketItem`,
   REMOVE_BASKET_ITEM: `data/removeBasketItem`,
@@ -39,12 +38,6 @@ export const setFilters = createAction(ActionType.SET_FILTERS, (filters) => {
 export const redirectToRoute = createAction(ActionType.REDIRECT_TO_ROUTE, (url) => {
   return {
     payload: url,
-  };
-});
-
-export const setBasket = createAction(ActionType.SET_BASKET, (status) => {
-  return {
-    payload: status,
   };
 });
 

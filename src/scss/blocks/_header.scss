@@ -12,12 +12,12 @@
   grid-template-columns: max-content 1fr max-content;
   align-items: center;
   padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 16px;
 }
 
 .header__image {
   position: relative;
-  height: 282px;
+  height: 268px;
   margin-top: 14px;
 }
 
@@ -29,8 +29,8 @@
 
 .header__picture {
   position: absolute;
-  top: -46px;
-  right: 0;
-  width: 878px;
-  height: 282px;
+  top: -50px;
+  right: 5px;
+  width: 819px;
+  height: 295px;
 }

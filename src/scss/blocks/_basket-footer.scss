@@ -64,6 +64,15 @@
   }
 }
 
+.basket-total {
+  display: flex;
+  flex-direction: column;
+}
+
+.basket-total__amount {
+  align-self: flex-end;
+}
+
 .basket-total__comment {
   font-family: $droidBold;
   font-style: normal;
@@ -75,7 +84,7 @@
 
 .basket-total__submit {
   width: 220px;
-  margin-top: 44px;
+  margin-top: 40px;
   font-family: $droidBold;
   font-style: normal;
   font-weight: 700;

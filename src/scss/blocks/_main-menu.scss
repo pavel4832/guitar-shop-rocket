@@ -1,10 +1,15 @@
 .main-menu {
-  margin-left: 94px;
+  margin-left: 114px;
+  margin-top: 25px;
+  align-self: start;
 }
 
 .main-menu__list {
   display: flex;
   flex-wrap: wrap;
+
+  margin: 0;
+  padding: 0;
 }
 
 .main-menu__item {
@@ -21,6 +26,6 @@
   font-weight: normal;
   font-size: 14px;
   line-height: 20px;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   color: $black;
 }

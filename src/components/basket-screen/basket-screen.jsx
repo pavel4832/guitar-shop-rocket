@@ -4,7 +4,7 @@ import BasketBoard from '../basket-board/basket-board';
 
 const BasketScreen = () => {
   return (
-    <main className="page-main main">
+    <main className="page-main main page-main--basket">
       <section className="main__basket basket">
         <div className="container">
           <h1 className="main__title">Корзина</h1>

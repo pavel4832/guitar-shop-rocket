@@ -17,7 +17,7 @@
 .sort__list {
   display: flex;
   margin: 0;
-  margin-left: 19px;
+  margin-left: 25px;
   padding: 0;
 }
 
@@ -58,6 +58,8 @@
 .sort__control {
   justify-self: flex-end;
   display: flex;
+  margin-top: -3px;
+  margin-right: 8px;
 }
 
 .sort__btn {

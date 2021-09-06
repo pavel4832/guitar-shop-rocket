@@ -49,6 +49,7 @@ const CatalogSort = (props) => {
         <MyButton
           inputClass={`sort__btn sort__btn--increase ${(sortDirection === SortDirection.UP) && `active`}`}
           onClick={() => onDirectionChangeHandler(SortDirection.UP)}
+          aria-label="Кнопка вверх"
         >
           <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M4.58301 15.667H17.4163L10.9997 5.58366L4.58301 15.667Z" fill="currentColor"/>
@@ -57,6 +58,7 @@ const CatalogSort = (props) => {
         <MyButton
           inputClass={`sort__btn sort__btn--decrease ${(sortDirection === SortDirection.DOWN) && `active`}`}
           onClick={() => onDirectionChangeHandler(SortDirection.DOWN)}
+          aria-label="Кнопка вниз"
         >
           <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M17.417 5.33301L4.58366 5.33301L11.0003 15.4163L17.417 5.33301Z" fill="currentColor"/>

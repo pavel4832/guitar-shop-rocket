@@ -56,7 +56,9 @@ const BasketFooter = () => {
           />
           <MyButton
             inputClass={`basket-promo__btn`}
-            onClick={getDiscount}
+            onClick={() => {
+              getDiscount();
+            }}
           >Применить купон</MyButton>
         </div>
       </div>

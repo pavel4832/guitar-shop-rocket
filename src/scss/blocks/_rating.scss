@@ -7,14 +7,14 @@
 .rating__item {
   display: flex;
   list-style: none;
-  margin-left: 3px;
+  margin-left: 2px;
   &:first-child {
     margin-left: 0;
   }
 }
 
 .rating__number {
-  margin-left: 3px;
+  margin-left: 4px;
   font-family: $poppins;
   font-style: normal;
   font-weight: 400;

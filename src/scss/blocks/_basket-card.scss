@@ -1,6 +1,7 @@
 .basket__item {
   display: grid;
-  grid-template-columns: min-content max-content max-content 1fr 1fr 1fr;
+  width: 100%;
+  grid-template-columns: min-content max-content max-content max-content max-content 1fr;
   padding-top: 20px;
   padding-bottom: 20px;
   list-style: none;
@@ -8,6 +9,13 @@
   &:last-child {
     border-bottom: 0.7px solid $border-filter;
   }
+}
+
+.basket__list {
+  margin: 0;
+  margin-top: 28px;
+  padding: 0;
+  width: 100%;
 }
 
 .basket__btn {
@@ -22,11 +30,12 @@
 
 .basket__image {
   margin-left: 25px;
+  height: 124px;
 }
 
 .basket__description {
-  margin-left: 68px;
-  width: 252px;
+  margin-left: 70px;
+  width: 260px;
 }
 
 .basket__title {
@@ -38,7 +47,7 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 15px;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
 }
 
@@ -51,12 +60,15 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 15px;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.07em;
 }
 
 .basket__price {
-  justify-self: center;
+  justify-self: flex-end;
   align-self: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 96px;
   font-family: $droidRegular;
   font-style: normal;
   font-weight: 400;

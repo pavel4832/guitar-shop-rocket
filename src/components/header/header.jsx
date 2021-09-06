@@ -22,7 +22,7 @@ const Header = () => {
         <div className="header__line"></div>
         <div className="header__line"></div>
         <div className="header__line"></div>
-        <img src="./img/image_header.png" className="header__picture" alt="гитара" width="878" height="282"/>
+        <img src="./img/image_header.png" className="header__picture" alt="гитара" width="819" height="282"/>
       </div>
     </header>
   );

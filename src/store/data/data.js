@@ -20,7 +20,6 @@ const initialState = {
   },
   basketList: [],
   menuType: ``,
-  onBasket: false,
 };
 
 const removeElement = (target, element) => {
@@ -63,12 +62,6 @@ const DATA = createReducer(initialState, (builder) => {
     return {
       ...state,
       filters: action.payload,
-    };
-  });
-  builder.addCase(actions.setBasket, (state, action) => {
-    return {
-      ...state,
-      onBasket: action.payload,
     };
   });
   builder.addCase(actions.addBasketItem, (state, action) => {

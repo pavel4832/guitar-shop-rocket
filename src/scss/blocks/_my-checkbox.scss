@@ -5,6 +5,7 @@
 .filter__checkbox {
   display: flex;
   align-items: center;
+  margin-top: 2px;
 }
 
 .filter__label {
@@ -59,4 +60,8 @@
     border: 0.7px solid $checkbox-disabled;
     background-color: $checkbox-disabled-background;
   }
+}
+
+.my-checkbox:focus + .filter__label {
+  outline: 2px solid $black;
 }

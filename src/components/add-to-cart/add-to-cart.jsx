@@ -57,7 +57,7 @@ const AddToCart = (props) => {
             <h2 className="add-to-cart__name basket__title">{`${GuitarType[card.type]} ${card.name}`}</h2>
             <p className="add-to-cart__text basket__text">{`Артикул: ${card.artNumber}`}</p>
             <p className="basket__text">{`Электрогитара, ${card.strings} струнная`}</p>
-            <p className="add-to-cart__price basket__price">{`${card.price.toLocaleString(`ru-RU`)} ₽`}</p>
+            <p className="add-to-cart__price">Цена: {`${card.price.toLocaleString(`ru-RU`)} ₽`}</p>
           </div>
         </div>
         <MyButton

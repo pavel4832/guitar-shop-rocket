@@ -1,5 +1,5 @@
 .filter {
-  margin-top: 40px;
+  margin-top: 45px;
   min-width: 208px;
 }
 
@@ -21,19 +21,19 @@
 .filter__item {
   list-style: none;
   padding-top: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
   border-top: 0.7px solid $border-filter;
   &:last-child {
     margin-bottom: 0;
   }
   &:nth-child(2) {
-    margin-bottom: 18px;
+    margin-bottom: 15px;
   }
 }
 
 .filter__field {
   margin: 0;
-  margin-bottom: 24px;
+  margin-bottom: 22px;
   font-family: $droidBold;
   font-style: normal;
   font-weight: 700;
