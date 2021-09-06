@@ -86,6 +86,13 @@ export const StringQuantity = {
   TWELVE: 12,
 };
 
+export const NumberStringForFilter = {
+  fourStrings: 4,
+  sixStrings: 6,
+  sevenStrings: 7,
+  twelveStrings: 12,
+};
+
 export const FilterByType = {
   ACOUSTIC: `acoustic`,
   ELECTRIC: `electric`,

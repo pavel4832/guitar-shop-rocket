@@ -4,7 +4,7 @@ import MyCheckbox from '../UI/my-checkbox/my-checkbox';
 import {getMaxPrice, getMinPrice, getSortedArray} from '../../utils';
 import {useDispatch, useSelector} from 'react-redux';
 import {setFilters} from '../../store/actions';
-import {FilterByType, RADIX, StringQuantity} from '../../const';
+import {FilterByType, NumberStringForFilter, RADIX, StringQuantity} from '../../const';
 
 const Filter = () => {
   const {guitarList, filters, sortType, sortDirection} = useSelector((state) => state.DATA);
@@ -54,23 +54,53 @@ const Filter = () => {
     filteredAndSortedList = getSortedArray(filteredAndSortedList, sortType, sortDirection, newFilters);
   }, [isMinPrice, isMaxPrice, isAcoustic, isElectric, isUku, isFour, isSix, isSeven, isTwelve]);
 
-  const checkDisableType = (type) => {
+  const checkDisableType = (isChange, isNowType) => {
     let isType = true;
-    filteredAndSortedList.forEach((item) => {
-      if (item.type === type) {
-        isType = false;
+    if (isChange) {
+      return false;
+    }
+    let count = 0;
+    let newArray = Object.keys(filters).splice(5, Object.entries(filters).length);
+    newArray.forEach((item, index) => {
+      if (filters[item]) {
+        count = count + 1;
+        let newFilter = Object.keys(filters)[index + 5];
+        let checkedArray = guitarList.filter((element) => element.strings === NumberStringForFilter[newFilter]);
+        checkedArray.forEach((a) => {
+          if (a.type === isNowType) {
+            isType = false;
+          }
+        });
       }
     });
+    if (count === 0) {
+      isType = false;
+    }
     return isType;
   };
 
-  const checkDisableString = (string) => {
+  const checkDisableString = (isChange, isNowString) => {
     let isString = true;
-    filteredAndSortedList.forEach((item) => {
-      if (item.strings === string) {
-        isString = false;
+    if (isChange) {
+      return false;
+    }
+    let count = 0;
+    let newArray = Object.keys(filters).splice(2, 5);
+    newArray.forEach((item, index) => {
+      if (filters[item]) {
+        count = count + 1;
+        let newFilter = Object.keys(filters)[index + 2];
+        let checkedArray = guitarList.filter((element) => element.type === newFilter);
+        checkedArray.forEach((a) => {
+          if (a.strings === isNowString) {
+            isString = false;
+          }
+        });
       }
     });
+    if (count === 0) {
+      isString = false;
+    }
     return isString;
   };
 
@@ -135,17 +165,17 @@ const Filter = () => {
           <h3 className="filter__field">Тип гитар</h3>
           <MyCheckbox
             id="acoustic"
-            disabled={checkDisableType(FilterByType.ACOUSTIC)}
+            disabled={checkDisableType(isAcoustic, FilterByType.ACOUSTIC)}
             onChange={() => setAcoustic(!isAcoustic)}
           >Акустические гитары</MyCheckbox>
           <MyCheckbox
             id="electric"
-            disabled={checkDisableType(FilterByType.ELECTRIC)}
+            disabled={checkDisableType(isElectric, FilterByType.ELECTRIC)}
             onChange={() => setElectric(!isElectric)}
           >Электрогитары</MyCheckbox>
           <MyCheckbox
             id="uku"
-            disabled={checkDisableType(FilterByType.UKU)}
+            disabled={checkDisableType(isUku, FilterByType.UKU)}
             onChange={() => setUku(!isUku)}
           >Укулеле</MyCheckbox>
         </li>
@@ -153,22 +183,22 @@ const Filter = () => {
           <h3 className="filter__field">Количество струн</h3>
           <MyCheckbox
             id="4"
-            disabled={checkDisableString(StringQuantity.FOUR)}
+            disabled={checkDisableString(isFour, StringQuantity.FOUR)}
             onChange={() => setFour(!isFour)}
           >4</MyCheckbox>
           <MyCheckbox
             id="6"
-            disabled={checkDisableString(StringQuantity.SIX)}
+            disabled={checkDisableString(isSix, StringQuantity.SIX)}
             onChange={() => setSix(!isSix)}
           >6</MyCheckbox>
           <MyCheckbox
             id="7"
-            disabled={checkDisableString(StringQuantity.SEVEN)}
+            disabled={checkDisableString(isSeven, StringQuantity.SEVEN)}
             onChange={() => setSeven(!isSeven)}
           >7</MyCheckbox>
           <MyCheckbox
             id="12"
-            disabled={checkDisableString(StringQuantity.TWELVE)}
+            disabled={checkDisableString(isTwelve, StringQuantity.TWELVE)}
             onChange={() => setTwelve(!isTwelve)}
           >12</MyCheckbox>
         </li>
