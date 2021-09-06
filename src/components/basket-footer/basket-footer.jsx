@@ -16,7 +16,12 @@ const BasketFooter = () => {
     if (isPromo) {
       switch (isPromo) {
         case PromoType.GITARAHIT:
-          setDiscount(getTotalPrice() * PromoDiscount.GITARAHIT);
+          let newPrice = 0;
+          basketList.forEach((item) => {
+            newPrice = newPrice + item.price * item.quantity;
+          });
+          let newDiscount1 = newPrice * PromoDiscount.GITARAHIT;
+          setDiscount(newDiscount1);
           break;
         case PromoType.SUPERGITARA:
           setDiscount(PromoDiscount.SUPERGITARA);
